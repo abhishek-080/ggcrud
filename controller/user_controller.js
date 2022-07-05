@@ -21,7 +21,7 @@ db.loginUser = (username, password) => {
 db.createUser = (name, phone,username,password,email) => {
   return new Promise((resolve, reject) => {
     pool.query(
-      "insert into regiter (name,phone,username,password,email) values(?,?,?,?)",
+      "insert into register (name,phone,username,password,email) values(?,?,?,?)",
       [name, phone,username, password,email],
       (err, results) => {
         if (err) {
