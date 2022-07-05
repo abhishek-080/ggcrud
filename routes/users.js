@@ -32,7 +32,7 @@ router.route('/register')
 
       
 
-    res.json(await controller.registerUser(req.body.username,req.body.password));
+    res.json(await controller.createUser(req.body.name,req.body.phone,req.body.username,req.body.password,req.body.email));
   }catch(err){
     next(err);
   }

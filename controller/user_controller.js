@@ -18,5 +18,20 @@ db.loginUser = (username, password) => {
     );
   });
 };
+db.createUser = (name, phone,username,password,email) => {
+  return new Promise((resolve, reject) => {
+    pool.query(
+      "insert into regiter (name,phone,username,password,email) values(?,?,?,?)",
+      [name, phone,username, password,email],
+      (err, results) => {
+        if (err) {
+          return reject(err);
+        }
+        console.log(results);
+        return resolve(results);
+      }
+    );
+  });
+};
 
 module.exports=db;
